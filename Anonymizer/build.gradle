@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'anonymizer.Anonymizer'
+    }
+}
+mainClassName = 'anonymizer.Anonymizer'
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+dependencies{
+    //compile 'org.xerial:sqlite-jdbc:3.8.11.2'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.16.1'
+}
